@@ -29,7 +29,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
-    <activity android:name=".NumbersActivity" />
+        <activity android:name=".NumbersActivity" android:label="Numbers"></activity>
     <activity android:name=".PhrasesActivity" />
     <activity android:name=".FamilyActivity" />
     <activity android:name=".ColorsActivity"></activity>

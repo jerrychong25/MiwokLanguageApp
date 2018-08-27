@@ -15,6 +15,7 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openNumbersList (View view){
-
+        Intent intentNumber = new Intent(this, NumbersActivity.class);
+        startActivity(intentNumber);
     }
 }
