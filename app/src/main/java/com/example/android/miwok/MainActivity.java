@@ -21,6 +21,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,15 +34,48 @@ public class MainActivity extends AppCompatActivity {
 
         // find the view that show numbers category
         TextView numbers = (TextView)findViewById(R.id.numbers);
+        TextView colors = (TextView)findViewById(R.id.colors);
+        TextView family  = (TextView)findViewById(R.id.family);
+        TextView phrases = (TextView)findViewById(R.id.phrases);
         // Set a clickListener on that view
 
         numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // creat new intent for open (( numbeersActivity
+                // creat new intent for open (( NumbersActivity
                 Intent numbersIntent = new Intent(MainActivity.this,NumbersActivity.class);
                 // Start to new Activity
                 startActivity(numbersIntent);
+            }
+        });
+
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // creat new intent for open (( ColorsActivity
+                Intent colorsIntent = new Intent(MainActivity.this,ColorsActivity.class);
+                // Start to new Activity
+                startActivity(colorsIntent);
+            }
+        });
+
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // creat new intent for open (( FamilyActivity
+                Intent familyIntent = new Intent(MainActivity.this,FamilyActivity.class);
+                // Start to new Activity
+                startActivity(familyIntent);
+            }
+        });
+
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // creat new intent for open (( PhrasesActivity
+                Intent phrasesIntent = new Intent(MainActivity.this,PhrasesActivity.class);
+                // Start to new Activity
+                startActivity(phrasesIntent);
             }
         });
     }
