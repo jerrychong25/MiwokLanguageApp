@@ -38,4 +38,14 @@ public class Word {
     public boolean hasImage() { return mImageResourceId != NO_IMAGE_PROVIDED; }
 
     public int getmAudioResourceId() { return mAudioResourceId; }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                '}';
+    }
 }

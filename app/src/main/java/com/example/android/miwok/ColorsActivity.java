@@ -3,6 +3,7 @@ package com.example.android.miwok;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -38,6 +39,8 @@ public class ColorsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
+                Log.d("ColorsActivity", "Current word: " + word);
+
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getmAudioResourceId());
                 mMediaPlayer.start();
             }
