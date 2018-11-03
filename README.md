@@ -1,5 +1,18 @@
 # Miwok App
 
+<p align="center">
+  <img src="ScreenShotHome.png" alt="Miwok Language Screenshot Home"
+       width="300" height="533">
+  <img src="ScreenShotNumbers.png" alt="Miwok Language Screenshot Numbers"
+       width="300" height="533">
+  <img src="ScreenShotFamilyMembers.png" alt="Miwok Language Screenshot Family Members"
+       width="300" height="533">
+  <img src="ScreenShotColors.png" alt="Miwok Language Screenshot Colors"
+       width="300" height="533">
+  <img src="ScreenShotPhrases.png" alt="Miwok Language Screenshot Phrases"
+       width="300" height="533">
+</p>
+
 ## Getting Started
 
 This mobile app display lists of vocabulary words for the user to learn the Miwok language, which developed during [Udacity's Android Basics: Multiscreen Apps Course](https://www.udacity.com/course/android-basics-multiscreen-apps--ud839).
