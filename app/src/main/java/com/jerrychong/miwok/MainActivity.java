@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Set the content of the activity to use the activity_main.xml layout file
-        setContentView(R.layout.activity_main);
+        setContentView(com.jerrychong.miwok.R.layout.activity_main);
 
         // Find the view pager that will allow the user to swipe between fragments
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        ViewPager viewPager = (ViewPager) findViewById(com.jerrychong.miwok.R.id.viewpager);
 
         // Create an adapter that knows which fragment should be shown on each page
         CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         // Find the tab layout that shows the tabs
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(com.jerrychong.miwok.R.id.tabs);
 
         // Connect the tab layout with the view pager. This will
         //   1. Update the tab layout when the view pager is swiped

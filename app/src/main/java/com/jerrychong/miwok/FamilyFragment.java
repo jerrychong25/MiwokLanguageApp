@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 
 import android.content.Context;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class FamilyFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
@@ -52,14 +52,14 @@ public class NumbersFragment extends Fragment {
         }
     };
 
-    public NumbersFragment() {
+    public FamilyFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
+        View rootView = inflater.inflate(com.jerrychong.miwok.R.layout.word_list, container, false);
 
         /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         // Create and setup the {@link AudioManager} to request audio focus
@@ -68,26 +68,26 @@ public class NumbersFragment extends Fragment {
         // Create an arrayList of words
         final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
-        words.add(new Word("two","otiiko", R.drawable.number_two, R.raw.number_two));
-        words.add(new Word("three","tolookosu", R.drawable.number_three, R.raw.number_three));
-        words.add(new Word("four","oyyisa", R.drawable.number_four, R.raw.number_four));
-        words.add(new Word("five","massokka", R.drawable.number_five, R.raw.number_five));
-        words.add(new Word("six","temmokka", R.drawable.number_six, R.raw.number_six));
-        words.add(new Word("seven","kenekaku", R.drawable.number_seven, R.raw.number_seven));
-        words.add(new Word("eight","kawinta", R.drawable.number_eight, R.raw.number_eight));
-        words.add(new Word("nine","wo'e", R.drawable.number_nine, R.raw.number_nine));
-        words.add(new Word("ten","na'aacha", R.drawable.number_ten, R.raw.number_ten));
+        words.add(new Word("father", "әpә", com.jerrychong.miwok.R.drawable.family_father, com.jerrychong.miwok.R.raw.family_father));
+        words.add(new Word("mother","әṭa", com.jerrychong.miwok.R.drawable.family_mother, com.jerrychong.miwok.R.raw.family_mother));
+        words.add(new Word("son","angsi", com.jerrychong.miwok.R.drawable.family_son, com.jerrychong.miwok.R.raw.family_son));
+        words.add(new Word("daughter","tune", com.jerrychong.miwok.R.drawable.family_daughter, com.jerrychong.miwok.R.raw.family_daughter));
+        words.add(new Word("older brother","taachi", com.jerrychong.miwok.R.drawable.family_older_brother, com.jerrychong.miwok.R.raw.family_older_brother));
+        words.add(new Word("younger brother","chalitti", com.jerrychong.miwok.R.drawable.family_younger_brother, com.jerrychong.miwok.R.raw.family_younger_brother));
+        words.add(new Word("older sister","teṭe", com.jerrychong.miwok.R.drawable.family_older_sister, com.jerrychong.miwok.R.raw.family_older_sister));
+        words.add(new Word("younger sister","kolliti", com.jerrychong.miwok.R.drawable.family_younger_sister, com.jerrychong.miwok.R.raw.family_younger_sister));
+        words.add(new Word("grandmother","ama", com.jerrychong.miwok.R.drawable.family_grandmother, com.jerrychong.miwok.R.raw.family_grandmother));
+        words.add(new Word("grandfather","paapa", com.jerrychong.miwok.R.drawable.family_grandfather, com.jerrychong.miwok.R.raw.family_grandfather));
 
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, com.jerrychong.miwok.R.color.category_family);
+        ListView listView = (ListView) rootView.findViewById(com.jerrychong.miwok.R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                Log.d("NumbersActivity", "Current word: " + word);
+                Log.d("FamilyActivity", "Current word: " + word);
 
                 // Release the media player if it currently exists because we are about to play a different sound file
                 releaseMediaPlayer();
@@ -141,9 +141,6 @@ public class NumbersFragment extends Fragment {
             // setting the media player to null is an easy way to tell that the media player
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
-
-            // Abandon audio focus when playback complete
-            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 }

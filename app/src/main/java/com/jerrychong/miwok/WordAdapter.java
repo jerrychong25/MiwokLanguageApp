@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 import android.app.Activity;
 import android.support.v4.content.ContextCompat;
@@ -31,25 +31,25 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View listItemView = convertView;
         if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
+                    com.jerrychong.miwok.R.layout.list_item, parent, false);
         }
 
         // Get the {@link AndroidFlavor} object located at this position in the list
         Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
+        TextView miwokTextView = (TextView) listItemView.findViewById(com.jerrychong.miwok.R.id.miwok_text_view);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
         miwokTextView.setText(currentWord.getMiwokTranslation());
 
         // Find the TextView in the list_item.xml layout with the ID version_number
-        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
+        TextView defaultTextView = (TextView) listItemView.findViewById(com.jerrychong.miwok.R.id.default_text_view);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         defaultTextView.setText(currentWord.getDefaulTranslation());
 
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.miwok_image_view);
+        ImageView imageView = (ImageView) listItemView.findViewById(com.jerrychong.miwok.R.id.miwok_image_view);
 
         if(currentWord.hasImage())
         {
@@ -62,7 +62,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Set the the colour for the list item
-        View textContainer = listItemView.findViewById(R.id.text_container);
+        View textContainer = listItemView.findViewById(com.jerrychong.miwok.R.id.text_container);
         // Find the color that the resource ID maps to
         int color = ContextCompat.getColor(getContext(), mColourResourceId);
         // Set the background color of the text container View

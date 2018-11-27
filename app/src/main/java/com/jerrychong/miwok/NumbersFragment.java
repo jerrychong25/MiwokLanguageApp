@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 
 import android.content.Context;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ColorsFragment extends Fragment {
+public class NumbersFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
@@ -52,14 +52,14 @@ public class ColorsFragment extends Fragment {
         }
     };
 
-    public ColorsFragment() {
+    public NumbersFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
+        View rootView = inflater.inflate(com.jerrychong.miwok.R.layout.word_list, container, false);
 
         /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         // Create and setup the {@link AudioManager} to request audio focus
@@ -68,24 +68,26 @@ public class ColorsFragment extends Fragment {
         // Create an arrayList of words
         final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red));
-        words.add(new Word("green","chokokki", R.drawable.color_green, R.raw.color_green));
-        words.add(new Word("brown","ṭakaakki", R.drawable.color_brown, R.raw.color_brown));
-        words.add(new Word("gray","ṭopoppi", R.drawable.color_gray, R.raw.color_gray));
-        words.add(new Word("black","kululli", R.drawable.color_black, R.raw.color_black));
-        words.add(new Word("white","kelelli", R.drawable.color_white, R.raw.color_white));
-        words.add(new Word("dusty yellow","ṭopiisә", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
-        words.add(new Word("mustard yellow","chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
+        words.add(new Word("one", "lutti", com.jerrychong.miwok.R.drawable.number_one, com.jerrychong.miwok.R.raw.number_one));
+        words.add(new Word("two","otiiko", com.jerrychong.miwok.R.drawable.number_two, com.jerrychong.miwok.R.raw.number_two));
+        words.add(new Word("three","tolookosu", com.jerrychong.miwok.R.drawable.number_three, com.jerrychong.miwok.R.raw.number_three));
+        words.add(new Word("four","oyyisa", com.jerrychong.miwok.R.drawable.number_four, com.jerrychong.miwok.R.raw.number_four));
+        words.add(new Word("five","massokka", com.jerrychong.miwok.R.drawable.number_five, com.jerrychong.miwok.R.raw.number_five));
+        words.add(new Word("six","temmokka", com.jerrychong.miwok.R.drawable.number_six, com.jerrychong.miwok.R.raw.number_six));
+        words.add(new Word("seven","kenekaku", com.jerrychong.miwok.R.drawable.number_seven, com.jerrychong.miwok.R.raw.number_seven));
+        words.add(new Word("eight","kawinta", com.jerrychong.miwok.R.drawable.number_eight, com.jerrychong.miwok.R.raw.number_eight));
+        words.add(new Word("nine","wo'e", com.jerrychong.miwok.R.drawable.number_nine, com.jerrychong.miwok.R.raw.number_nine));
+        words.add(new Word("ten","na'aacha", com.jerrychong.miwok.R.drawable.number_ten, com.jerrychong.miwok.R.raw.number_ten));
 
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_colors);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, com.jerrychong.miwok.R.color.category_numbers);
+        ListView listView = (ListView) rootView.findViewById(com.jerrychong.miwok.R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                Log.d("ColorsActivity", "Current word: " + word);
+                Log.d("NumbersActivity", "Current word: " + word);
 
                 // Release the media player if it currently exists because we are about to play a different sound file
                 releaseMediaPlayer();
@@ -139,6 +141,9 @@ public class ColorsFragment extends Fragment {
             // setting the media player to null is an easy way to tell that the media player
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
+
+            // Abandon audio focus when playback complete
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 }

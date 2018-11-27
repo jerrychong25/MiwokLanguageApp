@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 public class Word {
 

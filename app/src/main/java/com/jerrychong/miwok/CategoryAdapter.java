@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -63,13 +63,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return mContext.getString(R.string.category_numbers);
+            return mContext.getString(com.jerrychong.miwok.R.string.category_numbers);
         } else if (position == 1) {
-            return mContext.getString(R.string.category_family);
+            return mContext.getString(com.jerrychong.miwok.R.string.category_family);
         } else if (position == 2) {
-            return mContext.getString(R.string.category_colors);
+            return mContext.getString(com.jerrychong.miwok.R.string.category_colors);
         } else {
-            return mContext.getString(R.string.category_phrases);
+            return mContext.getString(com.jerrychong.miwok.R.string.category_phrases);
         }
     }
 }

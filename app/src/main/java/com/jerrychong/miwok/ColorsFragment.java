@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 
 import android.content.Context;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PhrasesFragment extends Fragment {
+public class ColorsFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
@@ -52,14 +52,14 @@ public class PhrasesFragment extends Fragment {
         }
     };
 
-    public PhrasesFragment() {
+    public ColorsFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
+        View rootView = inflater.inflate(com.jerrychong.miwok.R.layout.word_list, container, false);
 
         /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         // Create and setup the {@link AudioManager} to request audio focus
@@ -68,26 +68,24 @@ public class PhrasesFragment extends Fragment {
         // Create an arrayList of words
         final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going));
-        words.add(new Word("What is your name?","tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
-        words.add(new Word("My name is...","oyaaset...", R.raw.phrase_my_name_is));
-        words.add(new Word("How are you feeling?","michәksәs?", R.raw.phrase_how_are_you_feeling));
-        words.add(new Word("I’m feeling good.","kuchi achit", R.raw.phrase_im_feeling_good));
-        words.add(new Word("Are you coming?","әәnәs'aa?", R.raw.phrase_are_you_coming));
-        words.add(new Word("Yes, I’m coming.","hәә’ әәnәm", R.raw.phrase_yes_im_coming));
-        words.add(new Word("I’m coming.","әәnәm", R.raw.phrase_im_coming));
-        words.add(new Word("Let’s go.","yoowutis", R.raw.phrase_lets_go));
-        words.add(new Word("Come here.","әnni'nem", R.raw.phrase_come_here));
+        words.add(new Word("red", "weṭeṭṭi", com.jerrychong.miwok.R.drawable.color_red, com.jerrychong.miwok.R.raw.color_red));
+        words.add(new Word("green","chokokki", com.jerrychong.miwok.R.drawable.color_green, com.jerrychong.miwok.R.raw.color_green));
+        words.add(new Word("brown","ṭakaakki", com.jerrychong.miwok.R.drawable.color_brown, com.jerrychong.miwok.R.raw.color_brown));
+        words.add(new Word("gray","ṭopoppi", com.jerrychong.miwok.R.drawable.color_gray, com.jerrychong.miwok.R.raw.color_gray));
+        words.add(new Word("black","kululli", com.jerrychong.miwok.R.drawable.color_black, com.jerrychong.miwok.R.raw.color_black));
+        words.add(new Word("white","kelelli", com.jerrychong.miwok.R.drawable.color_white, com.jerrychong.miwok.R.raw.color_white));
+        words.add(new Word("dusty yellow","ṭopiisә", com.jerrychong.miwok.R.drawable.color_dusty_yellow, com.jerrychong.miwok.R.raw.color_dusty_yellow));
+        words.add(new Word("mustard yellow","chiwiiṭә", com.jerrychong.miwok.R.drawable.color_mustard_yellow, com.jerrychong.miwok.R.raw.color_mustard_yellow));
 
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_phrases);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, com.jerrychong.miwok.R.color.category_colors);
+        ListView listView = (ListView) rootView.findViewById(com.jerrychong.miwok.R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                Log.d("FamilyActivity", "Current word: " + word);
+                Log.d("ColorsActivity", "Current word: " + word);
 
                 // Release the media player if it currently exists because we are about to play a different sound file
                 releaseMediaPlayer();

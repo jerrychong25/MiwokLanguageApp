@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.jerrychong.miwok;
 
 
 import android.content.Context;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FamilyFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
@@ -52,14 +52,14 @@ public class FamilyFragment extends Fragment {
         }
     };
 
-    public FamilyFragment() {
+    public PhrasesFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
+        View rootView = inflater.inflate(com.jerrychong.miwok.R.layout.word_list, container, false);
 
         /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         // Create and setup the {@link AudioManager} to request audio focus
@@ -68,19 +68,19 @@ public class FamilyFragment extends Fragment {
         // Create an arrayList of words
         final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("father", "әpә", R.drawable.family_father, R.raw.family_father));
-        words.add(new Word("mother","әṭa", R.drawable.family_mother, R.raw.family_mother));
-        words.add(new Word("son","angsi", R.drawable.family_son, R.raw.family_son));
-        words.add(new Word("daughter","tune", R.drawable.family_daughter, R.raw.family_daughter));
-        words.add(new Word("older brother","taachi", R.drawable.family_older_brother, R.raw.family_older_brother));
-        words.add(new Word("younger brother","chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
-        words.add(new Word("older sister","teṭe", R.drawable.family_older_sister, R.raw.family_older_sister));
-        words.add(new Word("younger sister","kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister));
-        words.add(new Word("grandmother","ama", R.drawable.family_grandmother, R.raw.family_grandmother));
-        words.add(new Word("grandfather","paapa", R.drawable.family_grandfather, R.raw.family_grandfather));
+        words.add(new Word("Where are you going?", "minto wuksus", com.jerrychong.miwok.R.raw.phrase_where_are_you_going));
+        words.add(new Word("What is your name?","tinnә oyaase'nә", com.jerrychong.miwok.R.raw.phrase_what_is_your_name));
+        words.add(new Word("My name is...","oyaaset...", com.jerrychong.miwok.R.raw.phrase_my_name_is));
+        words.add(new Word("How are you feeling?","michәksәs?", com.jerrychong.miwok.R.raw.phrase_how_are_you_feeling));
+        words.add(new Word("I’m feeling good.","kuchi achit", com.jerrychong.miwok.R.raw.phrase_im_feeling_good));
+        words.add(new Word("Are you coming?","әәnәs'aa?", com.jerrychong.miwok.R.raw.phrase_are_you_coming));
+        words.add(new Word("Yes, I’m coming.","hәә’ әәnәm", com.jerrychong.miwok.R.raw.phrase_yes_im_coming));
+        words.add(new Word("I’m coming.","әәnәm", com.jerrychong.miwok.R.raw.phrase_im_coming));
+        words.add(new Word("Let’s go.","yoowutis", com.jerrychong.miwok.R.raw.phrase_lets_go));
+        words.add(new Word("Come here.","әnni'nem", com.jerrychong.miwok.R.raw.phrase_come_here));
 
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_family);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, com.jerrychong.miwok.R.color.category_phrases);
+        ListView listView = (ListView) rootView.findViewById(com.jerrychong.miwok.R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
